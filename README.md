@@ -2,7 +2,7 @@
 
 **Transforming Ideas into Experiences**
 
-Work in process
+[Live website](https://event-management-system-heta-shahs-projects.vercel.app/)
 
 ---
 
