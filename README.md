@@ -2,7 +2,7 @@
 
 **Transforming Ideas into Experiences**
 
-[Live Site](https://event-management-system.com) *(Replace with actual URL)*
+Work in process
 
 ---
 
