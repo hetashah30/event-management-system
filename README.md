@@ -1,73 +1,81 @@
-# Welcome to your Lovable project
+# Elevate Ventures – The Event Management System
 
-## Project info
+**Transforming Ideas into Experiences**
 
-**URL**: https://lovable.dev/projects/6eb9ee74-f9ce-42e0-823b-d7ab062de30a
+[Live Site](https://event-management-system.com) *(Replace with actual URL)*
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 Project Overview
 
-**Use Lovable**
+Elevate Ventures is a next-generation Event Management System designed to simplify and enhance the process of planning and executing events. We are passionate about transforming ideas into memorable experiences by combining strategic planning with technology.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/6eb9ee74-f9ce-42e0-823b-d7ab062de30a) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🧩 Problem Statement
 
-**Use your preferred IDE**
+Organizing events can often feel overwhelming due to:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Limited personalization
+- Complicated budget tracking
+- No real-time support or updates
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Clients find it difficult to access a platform that offers seamless customization, efficient planning tools, and trustworthy execution.
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 💡 Our Solution
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+**Elevate Ventures** provides a user-centric platform that combines creativity with technical efficiency:
 
-# Step 3: Install the necessary dependencies.
-npm i
+- 🎨 Personalized event planning tools
+- 💰 Dynamic budget management with flexible tracking
+- 📋 Seamless event request handling
+- ⚡ Real-time updates and intuitive UI
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+We bring convenience, clarity, and control to your event planning journey—from concept to completion.
+
+---
+
+## 🛠️ Tech Stack
+
+| Category              | Technology               |
+|-----------------------|--------------------------|
+| Frontend              | React + TypeScript       |
+| Styling               | Tailwind CSS + shadcn/ui |
+| Build Tool            | Vite                     |
+| Authentication        | Supabase Auth            |
+| Data Storage (Backend)| Firebase Firestore       |
+
+---
+
+## 🔐 Features
+
+- ✅ Supabase-based authentication for secure login/signup
+- 🔥 Firebase integration for storing event data, budgets, and user interactions
+- 📦 Modular, scalable codebase with reusable components
+- 🧭 Fast, responsive UI optimized for all screen sizes
+
+---
+
+## ⚙️ Installation
+
+### Prerequisites
+
+- Node.js & npm  
+  *(Install via [nvm](https://github.com/nvm-sh/nvm))*
+
+### Setup Instructions
+
+```bash
+# Clone the repository
+git clone https://github.com/hetashah30/event-management-system.git
+
+# Navigate into the project directory
+cd event-management-system
+
+# Install dependencies
+npm install
+
+# Start the development server
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/6eb9ee74-f9ce-42e0-823b-d7ab062de30a) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
