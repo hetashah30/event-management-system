@@ -1,5 +1,5 @@
-import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/database';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -13,8 +13,15 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+let app;
 
-// Export the initialized database
-export const db = getDatabase(app);
+// Check if Firebase app is already initialized
+if (!firebase.apps.length) {
+  app = firebase.initializeApp(firebaseConfig);
+} else {
+  app = firebase.app(); // If already initialized, use the existing one
+}
 
+// Export the initialized app and database
+export const db = app.database();
+export default app;
