@@ -1,19 +1,17 @@
+// firebaseConfig.ts
+
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAeJH6AGPmuhdMCg28LgpSxcHH4vzulsUE",
-  authDomain: "ems-form-dd747.firebaseapp.com",
-  databaseURL: "https://ems-form-dd747-default-rtdb.firebaseio.com",
-  projectId: "ems-form-dd747",
-  storageBucket: "ems-form-dd747.appspot.com",
-  messagingSenderId: "407910106201",
-  appId: "1:407910106201:web:c08b807cb8a6914e4e9d48"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY!,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN!,
+  databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL!,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID!,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET!,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID!,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID!,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Export the initialized database
 export const db = getDatabase(app);
