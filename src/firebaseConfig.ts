@@ -1,6 +1,6 @@
 // firebaseConfig.ts
 
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps, getApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
@@ -13,5 +13,7 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID!,
 };
 
-const app = initializeApp(firebaseConfig);
+// Prevent re-initialization during hot-reload (especially in dev)
+const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+
 export const db = getDatabase(app);
