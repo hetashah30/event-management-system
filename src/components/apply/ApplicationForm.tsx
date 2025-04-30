@@ -1,9 +1,5 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// Import Firebase SDK directly
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/database';
-import { db } from '@/firebaseConfig';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -22,7 +18,7 @@ export default function ApplicationForm() {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [date, setDate] = useState<Date | undefined>();
-
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -43,31 +39,27 @@ export default function ApplicationForm() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleBudgetSelect = (budget: string) => {
-    setFormData(prev => ({ ...prev, budget }));
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    
+    // Validate form data
     if (!formData.name || !formData.email || !formData.phone || !formData.eventType || !date) {
       toast.error("Please fill out all required fields.");
       return;
     }
-
+    
     setIsSubmitting(true);
-
+    
     try {
-      // Use Firebase compat API
-      const applicationRef = firebase.database().ref('applications');
-      await applicationRef.push({
-        ...formData,
-        eventDate: date.toISOString(),
-        submittedAt: new Date().toISOString()
-      });
-
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // In a real app, you would submit to your backend here
+      console.log("Form submitted:", { ...formData, eventDate: date });
+      
       toast.success("Your application has been submitted successfully! We'll be in touch soon.");
-
+      
+      // Redirect to thank you page or home
       setTimeout(() => navigate('/'), 2000);
     } catch (error) {
       toast.error("Something went wrong. Please try again later.");
@@ -76,6 +68,9 @@ export default function ApplicationForm() {
     }
   };
 
+  const handleBudgetSelect = (budget: string) => {
+    setFormData(prev => ({ ...prev, budget }));
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
@@ -327,3 +322,9 @@ export default function ApplicationForm() {
     </form>
   );
 }
+
+
+
+2/2
+
+ChatGPT said:
