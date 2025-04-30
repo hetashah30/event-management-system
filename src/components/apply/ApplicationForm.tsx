@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getDatabase, ref, push, set } from "firebase/database";
+// Import Firebase SDK directly
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/database';
 import { db } from '@/firebaseConfig';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -56,8 +58,9 @@ export default function ApplicationForm() {
     setIsSubmitting(true);
 
     try {
-      const applicationRef = ref(db, 'applications');
-      await push(applicationRef, {
+      // Use Firebase compat API
+      const applicationRef = firebase.database().ref('applications');
+      await applicationRef.push({
         ...formData,
         eventDate: date.toISOString(),
         submittedAt: new Date().toISOString()
