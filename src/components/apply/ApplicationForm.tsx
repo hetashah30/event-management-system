@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getDatabase, ref, set } from "firebase/database";
+import { getDatabase, ref, push, set } from "firebase/database";
 import { db } from '@/firebaseConfig';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
