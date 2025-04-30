@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ref, push } from 'firebase/database';
+import { db } from '@/firebaseConfig';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -18,7 +20,7 @@ export default function ApplicationForm() {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [date, setDate] = useState<Date | undefined>();
-  
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -39,27 +41,30 @@ export default function ApplicationForm() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const handleBudgetSelect = (budget: string) => {
+    setFormData(prev => ({ ...prev, budget }));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Validate form data
+
     if (!formData.name || !formData.email || !formData.phone || !formData.eventType || !date) {
       toast.error("Please fill out all required fields.");
       return;
     }
-    
+
     setIsSubmitting(true);
-    
+
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // In a real app, you would submit to your backend here
-      console.log("Form submitted:", { ...formData, eventDate: date });
-      
+      const applicationRef = ref(db, 'applications');
+      await push(applicationRef, {
+        ...formData,
+        eventDate: date.toISOString(),
+        submittedAt: new Date().toISOString()
+      });
+
       toast.success("Your application has been submitted successfully! We'll be in touch soon.");
-      
-      // Redirect to thank you page or home
+
       setTimeout(() => navigate('/'), 2000);
     } catch (error) {
       toast.error("Something went wrong. Please try again later.");
@@ -68,9 +73,6 @@ export default function ApplicationForm() {
     }
   };
 
-  const handleBudgetSelect = (budget: string) => {
-    setFormData(prev => ({ ...prev, budget }));
-  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
