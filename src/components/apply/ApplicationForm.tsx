@@ -89,6 +89,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
+import { getDatabase, ref, push } from 'firebase/database';
 
 export default function ApplicationForm() {
   const navigate = useNavigate();
