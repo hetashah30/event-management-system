@@ -19,4 +19,13 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      // This ensures firebase modules are not processed by Rollup
+      // during the build process, which can cause issues
+      external: [
+        /firebase\/.*/
+      ]
+    }
+  }
 }));
