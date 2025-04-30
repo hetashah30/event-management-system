@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -20,12 +21,24 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
+    commonjsOptions: {
+      include: [/node_modules/],
+    },
     rollupOptions: {
-      // This ensures firebase modules are not processed by Rollup
-      // during the build process, which can cause issues
-      external: [
-        /firebase\/.*/
-      ]
-    }
+      plugins: [
+        nodeResolve({
+          browser: true,
+          preferBuiltins: false
+        })
+      ],
+      // Make sure external is an array of exact matches, not regex
+      external: [],
+      output: {
+        manualChunks: {
+          firebase: ['firebase/app', 'firebase/database']
+        }
+      }
+    },
+    sourcemap: true
   }
 }));
