@@ -93,7 +93,9 @@ import { cn } from '@/lib/utils';
 // import { getDatabase, ref, push } from "firebase/database";
 import { app } from "../../firebaseConfig";
 
+import { getDatabase } from "firebase/database";
 const db = getDatabase(app);
+export { db };
 
 export default function ApplicationForm() {
   const navigate = useNavigate();
