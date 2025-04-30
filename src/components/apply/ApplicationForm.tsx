@@ -322,9 +322,3 @@ export default function ApplicationForm() {
     </form>
   );
 }
-
-
-
-2/2
-
-ChatGPT said:
