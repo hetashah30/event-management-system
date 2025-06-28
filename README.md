@@ -1,78 +1,83 @@
 # Elevate Ventures – The Event Management System
 
-**Transforming Ideas into Experiences**
+**Transforming Campus Events into Seamless Digital Experiences**
 
-[Live website](https://event-management-system-heta-shahs-projects.vercel.app/)
+[🔗 Live Website](https://event-management-system-heta-shahs-projects.vercel.app/)
 
 ---
 
 ## 🚀 Project Overview
 
-Elevate Ventures is a next-generation Event Management System designed to simplify and enhance the process of planning and executing events. We are passionate about transforming ideas into memorable experiences by combining strategic planning with technology.
+**Elevate Ventures** is a lightweight Event Management System built specifically for academic and institutional events. With a focus on simplicity, usability, and real-time data handling, it enables organizers and participants to engage smoothly in the event lifecycle—from creation to registration.
 
 ---
 
 ## 🧩 Problem Statement
 
-Organizing events can often feel overwhelming due to:
+Event management in educational institutions often suffers due to:
 
-- Limited personalization
-- Complicated budget tracking
-- No real-time support or updates
+- Manual registrations via spreadsheets or paper forms  
+- Lack of real-time data updates and centralized control  
+- Poorly designed, non-mobile-friendly platforms  
+- No authentication or role management  
 
-Clients find it difficult to access a platform that offers seamless customization, efficient planning tools, and trustworthy execution.
+These challenges make event organization inefficient and frustrating for both students and faculty.
 
 ---
 
 ## 💡 Our Solution
 
-**Elevate Ventures** provides a user-centric platform that combines creativity with technical efficiency:
+**Elevate Ventures** provides a clean, fast, and user-friendly platform that simplifies event workflows:
 
-- 🎨 Personalized event planning tools
-- 💰 Dynamic budget management with flexible tracking
-- 📋 Seamless event request handling
-- ⚡ Real-time updates and intuitive UI
-
-We bring convenience, clarity, and control to your event planning journey—from concept to completion.
+- 📋 Event creation and registration using modern UI  
+- 🔐 Firebase-based login/signup authentication  
+- 📊 Live data updates with Firestore  
+- 🖥️ Mobile-first, responsive design for students and organizers  
+- 🧩 Clean codebase for easy future extension
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Category              | Technology               |
-|-----------------------|--------------------------|
-| Frontend              | React + TypeScript       |
-| Styling               | Tailwind CSS + shadcn/ui |
-| Build Tool            | Vite                     |
-| Authentication        | Supabase Auth            |
-| Data Storage (Backend)| Firebase Firestore       |
+| Category              | Technology                 |
+|-----------------------|----------------------------|
+| Frontend              | React + TypeScript         |
+| Styling               | Tailwind CSS + shadcn/ui   |
+| Build Tool            | Vite                       |
+| Authentication        | Firebase Authentication    |
+| Data Storage (Backend)| Firebase Firestore         |
+| Deployment            | Vercel                     |
 
 ---
 
 ## 🔐 Features
 
-- ✅ Supabase-based authentication for secure login/signup
-- 🔥 Firebase integration for storing event data, budgets, and user interactions
-- 📦 Modular, scalable codebase with reusable components
-- 🧭 Fast, responsive UI optimized for all screen sizes
+- ✅ Firebase Authentication with email-based signup & login  
+- 📦 Realtime event data storage with Firebase Firestore  
+- 🎯 User form validations for secure and accurate inputs  
+- 🧱 Component-based modular architecture using React  
+- 🌙 Mobile-responsive UI with dark mode support  
+- ⚡ Instant deployment using Vercel CI/CD pipeline
 
 ---
 
 ## ⚙️ Installation
 
-### Prerequisites
+### 📦 Prerequisites
 
 - Node.js & npm  
-  *(Install via [nvm](https://github.com/nvm-sh/nvm))*
+  *(Recommended: Use [nvm](https://github.com/nvm-sh/nvm) for version management)*
 
-### Setup Instructions
+---
+
+### 🧪 Setup Instructions
 
 ```bash
 # Clone the repository
-git clone https://github.com/hetashah30/event-management-system.git
+git clone https://github.com/hetashah30/elevate-ventures-ems.git
 
 # Navigate into the project directory
-cd event-management-system
+cd elevate-ventures-ems
 
 # Install dependencies
 npm install
